@@ -1,0 +1,34 @@
+@import "bourbon"
+@import "_vars.sass"
+
++font-face("RobotoRegular", "../fonts/RobotoRegular/RobotoRegular", $file-formats: eot woff ttf)
++font-face("OpenSansBold", "../fonts/OpenSansBold/OpenSansBold", $file-formats: eot woff ttf)
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	font-family: "RobotoRegular", sans-serif
+	overflow-x: hidden
+
+.hidden
+	display: none
+
+a
+	&:hover
+		text-decoration: none
+		color: $blak
+
+h1,h2,h3,h4,h5,h6
+	font-family: "OpenSansBold",sans-serif
+
+h1,h2,h3,h4,h5,h6,ul
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+input,textarea,button
+	outline: none
+	border: none
+
