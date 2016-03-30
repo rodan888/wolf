@@ -25,6 +25,444 @@ body textarea:required:valid
 	color: #666
 
 //Custom Styles Here
+.top-title
+	position: relative
+	overflow: hidden
+	height: 375px
+	.background
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		height: auto
+		z-index: -1
+	.page-title
+		position: relative
+		height: 375px
+		h1
+			font-family: 'OpenSansBold'
+			position: absolute
+			bottom: 0
+			color: #3D3D3D
+			background-color: $white
+			padding: 20px 15px 0
+			font-size: 45px
+			line-height: 53px
+			font-weight: 900
+	&.home
+		height: 720px
+		.btn
+			width: 170px
+			line-height: 55px
+			padding: 0
+		.background
+			bottom: 0
+			top: inherit
+		.content
+			position: relative
+			min-height: 720px
+			.block-content
+				position: absolute
+				z-index: 1
+				top: 50%
+				left: 0
+				transform: translateY(-50%)
+				-moz-transform: translateY(-50%)
+				-o-transform: translateY(-50%)
+				color: $white
+				p.blue
+					text-transform: uppercase
+					font-size: 40px
+					font-family: 'AmazingGroteskBook'
+					color: $mainlight
+					letter-spacing: 2px
+				h1
+					font-size: 25px
+					text-transform: uppercase
+					font-size: 70px
+					font-family: 'AmazingGroteskBook'
+					letter-spacing: 2px
+				p
+					font-size: 24px
+					font-family: 'OpenSansLight'
+				a
+					margin: 10px
+					margin-top: 20px
+
+section.section
+	padding: 90px 0 107px
+	h2
+		text-align: center
+		font-family: 'AmazingGroteskBook'
+		font-size: 36px
+		color: $titlecolor
+#slider
+	background-repeat: no-repeat
+	background-size: cover
+	&.home
+		background-color: #F7F7F7
+		.item
+			border: 1px solid $main
+
+#owl-slider
+	padding-top: 60px
+	.owl-item	
+		.item			
+			border-radius: 5px		
+			margin-right: 20px
+			height: 486px
+			position: relative
+			padding-bottom: 80px	
+			overflow: hidden
+			background-color: $white
+			&:hover
+				img
+					transform: scale(1.3)	
+					-moz-transform: scale(1.3)	
+					-o-transform: scale(1.3)	
+					-webkit-transform: scale(1.3)	
+			.img-wrap
+				overflow: hidden
+				position: relative
+				img
+					height: 275px
+					min-width: 100%
+					width: auto
+					transition: transform 1.5s
+				h3
+					position: absolute
+					width: 90%
+					left: 5%
+					bottom: 25px
+					font-family: 'AmazingGroteskBook'
+					color: $white
+					font-size: 23px
+			.descr	
+				width: 90%
+				margin: 0 5%
+				padding-top: 25px		
+				p
+					color: $textcolor
+			.btn
+				position: absolute
+				bottom: 31px
+				left: 5%
+		&:last-child .item
+			margin-right: 0
+
+#main-info
+	.item
+		.img-wrap
+			overflow: hidden
+			max-width: 800px
+			img
+				height: 540px
+				min-width: 100%
+		.content-wrap
+			text-align: left
+			height: 540px	
+			padding-top: 45px
+			position: relative			
+			h3
+				font-family: 'AmazingGroteskBook'
+				color: $titlecolor
+				font-size: 29px
+			p
+				color: $textcolor
+			ul				
+				position: absolute
+				top: 245px
+				width: calc(100% - 800px)
+				padding: 0 0 0 65px
+				min-width: 390px
+				li
+					position: relative
+					padding-left: 54px	
+					margin-bottom: 33px
+					b
+						display: block				
+					i
+						position: absolute
+						display: inline-block
+						width: 40px
+						height: 50px
+						color: $main
+						font-size: 25px
+						line-height: 26px
+						left: 0
+
+			.btn-wrap	
+				position: absolute
+				bottom: 0					
+				width: calc(100% - 800px)
+				padding-left: 40px
+				padding-bottom: 10px
+				.btn
+					margin-right: 15px
+		&:nth-child(odd)
+			.img-wrap
+				float: left
+				margin-right: 40px
+			.content-wrap
+				padding-right: 40px
+				.btn-wrap, ul
+					right: 0
+		&:nth-child(even)
+			.img-wrap
+				float: right
+				margin-left: 40px
+			.content-wrap
+				padding-left: 40px
+				.btn-wrap
+					left: 0
+					text-align: right
+					padding-right: 40px
+				ul
+					left: 0
+.client
+	padding-bottom: 55px!important
+	h2
+		margin-top: 20px
+	.client-logo
+		font-size: 0
+		text-align: center
+		padding-top: 90px
+		li
+			display: inline-block
+			width: 16.666666%
+			vertical-align: middle
+			min-width: 160px
+			margin-bottom: 20px
+			img
+				width: auto
+				max-width: 100%
+
+#subscribe
+	background-image: url("../img/subscribe.jpg")
+	background-repeat: no-repeat
+	background-size: cover
+	height: 290px
+	position: relative
+	color: $white
+	text-align: center
+	padding-top: 68px
+	h2
+		color: $white
+	form
+		margin-top: 45px
+		input
+			background-color: transparent	
+			border-bottom: 1px solid $white
+			margin-right: 33px
+			height: 47px
+			width: 365px
+			&::-webkit-input-placeholder 
+				color: $white
+			&::-moz-placeholder 
+				color: $white
+			&:-moz-placeholder	
+				color: $white
+			&:-ms-input-placeholder 
+				color: $white
+		.btn
+			i
+				margin-right: 15px
+#social
+	color: $white
+	background-color: #00B0D3
+	i
+		font-size: 30px
+		line-height: 60px
+	.social
+		text-align: right
+		font-size: 0
+		li
+			display: inline-block
+			&:nth-child(1)
+				a
+					background-color: #00B0D3
+			&:nth-child(2)
+				a
+					background-color: #0077B5
+			&:nth-child(3)
+				a
+					background-color: #4572BC
+			a
+				display: block
+				color: $white
+				width: 55px
+				text-align: center
+				i
+					font-size: 24px
+					line-height: 60px
+
+footer
+	line-height: 60px
+	font-size: 13px
+	a
+		color: $textcolor
+	.col-md-4:nth-child(2)
+		text-align: center
+	.col-md-4:nth-child(3)
+		text-align: right
+	ul
+		li
+			display: inline-block
+			a
+				display: block
+				position: relative				
+				margin-right: 14px
+				&:before
+					position: absolute
+					content: ""
+					width: 1px 
+					height: 15px
+					background-color: $textcolor
+					right: -10px
+					top: 50%
+					margin-top: -7px
+			&:last-child a
+				margin-right: 0
+				&:before
+					display: none
+
+#article
+	article		
+		height: 370px		
+		.img-wrap
+			overflow: hidden
+			img
+				height: 370px
+				min-width: 100%
+				width: auto
+		.article-content
+			position: relative
+			padding-left: 42px
+			height: 370px
+			h3
+				font-family: 'AmazingGroteskBook'
+				font-size: 28px
+				line-height: 32px				
+				margin-bottom: 40px		
+			p
+				color: $textcolor
+			.btn
+				position: absolute
+				bottom: 0
+				left: 42px
+				padding: 0
+				line-height: 24px
+				i
+					font-size: 18px
+#implement
+	padding-bottom: 77px
+	ul
+		li
+			min-height: 130px
+			background-color: #DDE0E1
+			padding-left: 170px
+			position: relative
+			margin-bottom: 20px
+			padding-top: 25px
+			padding-right: 136px
+			>i
+				position: absolute
+				width: 92px
+				height: 92px
+				background-color: $white
+				color: $main
+				line-height: 92px
+				text-align: center
+				font-size: 53px
+				top: 50%
+				margin-top: -46px
+				border-radius: 50%
+				left: 31px
+			.btn
+				position: absolute
+				bottom: 0
+				right: 0
+			h3
+				font-family: 'AmazingGroteskBook'
+
+/*Packery*/
+#packery
+	.grid
+		.grid-item
+			overflow: hidden
+			box-shadow: 0 0 2px
+			&:nth-child(5n+1)
+				width: 345px
+				height: 584px			
+			&:nth-child(5n+2)
+				width: calc(100% - 361px)
+				width: -webkit-calc(100% - 361px)
+				width:  -moz-calc(100% - 361px)
+				height: 287px
+				.descr-block
+					width: 50%
+					right: 0
+					min-width: 345px
+					.slug
+						color: $white
+			&:nth-child(5n+3)
+				width: 345px
+				height: 287px
+				.descr-block
+					left: 0
+					color: $textcolor
+					.btn,h3
+						color: $titlecolor					
+			&:nth-child(5n+4)
+				width: 345px
+				height: 584px				
+			&:nth-child(5n+5)
+				width: calc(100% - 365px)
+				width: -webkit-calc(100% - 365px)
+				width:  -moz-calc(100% - 365px)
+				height: 287px
+				.descr-block
+					width: 50%
+					left: 0
+					min-width: 345px
+			img
+				width: auto
+				height: 100%
+				min-width: 100%
+				position: absolute
+				top: 0
+				left: 50%
+				transform: translateX(-50%)
+				-webkit-transform: translateX(-50%)
+				-moz-transform: translateX(-50%)
+				-o-transform: translateX(-50%)
+				-ms-transform: translateX(-50%)
+		.descr-block
+			position: absolute
+			bottom: 0
+			text-align: left
+			color: $white
+			padding: 0 15px 20px 15px
+			.btn
+				color: $white
+			h3
+				color: $white
+				font-family: 'AmazingGroteskBook'
+				margin-bottom: 25px
+				font-size: 20px
+			.slug
+				color: $main
+				text-transform: uppercase
+				font-size: 12px
+				&:hover
+					text-decoration: underline
+	.btn.block
+		margin: 52px auto
+
+
+
+
+
 
 
 //ALWAYS END

@@ -1,0 +1,40 @@
+{
+  "packeryList": [
+    {
+      "link": "/",
+      "slug": "MARKET IDEAS",
+      "img": "img/packery1.jpg",
+      "title": "Lorem ipsum dolor sit",
+      "descr": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi tempora tenetur iusto dolorum sint consequuntur culpa, soluta.Quia recusandae dolor dolores ea debitis labore quibusdam non, aspernatur, necessitatibus, earum voluptatibus. Quia recusandae dolor dolores ea debitis labore quibusdam non, aspernatur, necessitatibus, earum voluptatibus."
+      },
+      {
+      "link": "/",
+      "slug": "MARKET IDEAS",
+      "img": "img/packery2.jpg",
+      "title": "Lorem ipsum dolor sit",
+      "descr": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi tempora tenetur iusto dolorum sint consequuntur culpa, soluta."
+      },
+      {
+      "link": "/",
+      "slug": "MARKET IDEAS",
+      "img": "",      
+      "title": "Lorem ipsum dolor sit",
+      "descr": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi tempora tenetur iusto dolorum sint consequuntur culpa, soluta. Quia recusandae dolor dolores ea debitis labore quibusdam non, aspernatur, necessitatibus, earum voluptatibus."
+      },
+      {
+      "link": "/",
+      "slug": "MARKET IDEAS",
+      "img": "img/packery4.jpg",
+      "title": "Lorem ipsum dolor sit",
+      "descr": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi tempora tenetur iusto dolorum sint consequuntur culpa, soluta.Quia recusandae dolor dolores ea debitis labore quibusdam non, aspernatur, necessitatibus, earum voluptatibus."
+      },
+      {
+      "link": "/",
+      "slug": "MARKET IDEAS",
+      "img": "img/packery5.jpg",
+      "title": "Lorem ipsum dolor sit",
+      "descr": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi tempora tenetur iusto dolorum sint consequuntur culpa, soluta."
+      }
+  ]
+}
+
