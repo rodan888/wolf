@@ -99,18 +99,41 @@ header
 		nav
 			text-align: right
 			padding-right: 40px
-			ul
-				li
-					display: inline-block
-					a
-						color: $main
-						padding: 0 20px
-						line-height: 100px
-						display: block
-					&:last-child a
-						padding-right: 0
-						span
-							font-family: 'AmazingGroteskBook'
+			> ul
+				>	li
+						display: inline-block
+						vertical-align: top
+						> a
+							color: $main
+							padding: 0 20px
+							line-height: 100px
+							display: block
+							position: relative
+							margin 0 auto
+							&:before
+								position: absolute
+								content: "\25bf"
+								width: 18px
+								height: 30px
+								right: 0
+								top: 50%
+								margin-top: -16px
+								line-height: 32px
+								font-size: 22px
+								color: $main
+								text-align: center
+						&:last-child a						
+							span
+								font-family: 'AmazingGroteskBook'
+						ul
+							position: absolute
+							display: none
+							li
+								display: inline-block
+								a
+									display: block
+									position: relative
+									padding: 5px 10px
 			.search-block
 				position: absolute
 				right: 10px
@@ -118,7 +141,79 @@ header
 				line-height: 40px
 				height: 40px
 				margin-top: -21px			
-				color: $main
-				input
-					display: none
+				color: $main					
+	.btn-menu			
+		position: absolute
+		top: 32px
+		right: 15px
+		width: 32px
+		height: 32px
+		cursor: pointer	
+		z-index: 1000	
+		display: none				
+		span
+			position: absolute
+			width: 100%
+			height: 3px
+			background-color: $main
+			transition: all 0.3s
+			&:nth-child(1)
+				top: 4px
+			&:nth-child(2)
+				top: 16px
+			&:nth-child(3)
+				top: 28px
+		&.open-menu
+			span
+				&:nth-child(1)
+					transform: rotate(45deg)
+					-webkit-transform: rotate(45deg)
+					top: 15px
+					-webkit-transition-delay: 0.3s
+					-o-transition-delay: 0.3s
+					transition-delay: 0.3s
+				&:nth-child(2)
+					width: 0
+				&:nth-child(3)
+					transform: rotate(-45deg)
+					-webkit-transform: rotate(-45deg)
+					top: 15px
+					-webkit-transition-delay: 0.3s
+					-o-transition-delay: 0.3s
+					transition-delay: 0.3s
+	form#search
+		position: absolute
+		width: 270px
+		height: 100px
+		bottom: -115px
+		right: -370px
+		opacity: 0
+		box-shadow: 1px 2px 3px #ccc
+		background-color: $white
+		line-height: 40px
+		transition: all 0.6s
+		&.active
+			right: 0
+			opacity: 1	
+		&:before
+			position: absolute
+			content: ""
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 0 10px 12px 10px
+			border-color: transparent transparent $white transparent
+			top: -11px
+			right: 10px
+		input
+			position: absolute
+			top: 50%
+			margin-top: -22px
+			left: 20px
+			width: 200px
+			border-bottom: 1px solid $main
+		button
+			line-height: 96px
+			color: $main
+			width: 41px
 

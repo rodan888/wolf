@@ -40,7 +40,18 @@ $(function() {
 			if(jQuery().parallax) jQuery('.parallax').parallax();
 	});
 
-	
+		//mobile button
+	jQuery('.btn-menu').on('click',function(){
+		jQuery(this).toggleClass('open-menu');
+		jQuery('header nav').slideToggle('fast');
+	});
+
+	jQuery('.search-block').on('click', function(){
+		jQuery(this).next().toggleClass('active');		
+	});
+	jQuery(window).scroll(function(){
+		jQuery('form#search').removeClass('active');		
+	});
 
 //owl slider
 jQuery("#owl-slider").owlCarousel({ 

@@ -4,12 +4,75 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
+	#main-info 
+		.item 
+			.img-wrap
+				width: 600px
+	#main-info
+		.item
+			.content-wrap 
+				ul, .btn-wrap	
+					width: calc(100% - 600px)
+					width: -webkit-calc(100% - 600px)	
+		&:nth-child(even) 
+			.content-wrap 
+				.btn-wrap
+					padding-right: 0!important
+		
+
+
 	/**/
 
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
+	#main-info
+		.item
+			overflow-x: hidden
+			.content-wrap
+				text-align: center 
+				padding: 0!important
+				height: auto
+				ul,.btn-wrap
+					margin: 50px auto 30px
+					padding-left: 0
+					min-width: 350px
+					position: initial
+				.btn-wrap
+					a
+						margin-bottom: 20px
+			.img-wrap
+				float: none!important
+				margin: 0!important
+				min-width: 100%
+	header
+		.top-nav
+			nav
+				display: none				
+				text-align: center
+				padding: 0
+				z-index: 1000
+				background-color: $white
+				ul
+					li
+						display: block
+						a
+							line-height: 45px
+							padding-left: 0
+			.btn-menu
+				display: block
+		.search-block
+			display: none
+		form#search
+			position: initial
+			box-shadow: none
+			margin: 0 auto
+			opacity: 1
+			input
+				position: initial
+
+
+
 
 
 /* Small Devices, Tablets */
@@ -36,9 +99,43 @@
 		-ms-animation: none !important
 		animation: none !important
 
+	footer
+		text-align: center
+		ul
+			text-align: center
+	#social 
+		.social
+			text-align: center
+	#owl-slider 
+		.owl-buttons
+			display: none!important
+
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
+	#owl-slider 		
+		.owl-wrapper-outer
+			width: 100%!important
+		.owl-item
+			.item
+				margin-right: 0
+
+	#main-info
+		.item		
+			.content-wrap
+				ul,.btn-wrap
+					min-width: 300px!important
+				.btn-wrap
+					text-align: center!important
+					.btn
+						margin-right: 0
+
+	#subscribe
+		form
+			input
+				width: 288px
+				margin-bottom: 20px
+				margin-right: 0
 	/**/
 
 

@@ -3,7 +3,7 @@
  *	v1.3.3
  */
 
-/* clearfix */
+/* clearfix */ 
 .owl-carousel .owl-wrapper:after {
 	content: ".";
 	display: block;
