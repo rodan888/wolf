@@ -46,12 +46,21 @@ $(function() {
 		jQuery('header nav').slideToggle('fast');
 	});
 
+// search block
 	jQuery('.search-block').on('click', function(){
 		jQuery(this).next().toggleClass('active');		
 	});
 	jQuery(window).scroll(function(){
 		jQuery('form#search').removeClass('active');		
 	});
+
+
+// Solutions-import block toggle
+jQuery('#implement .btn').on('click', function(event){
+	event.preventDefault();
+	jQuery(this).next().slideToggle('slow');
+});
+
 
 //owl slider
 jQuery("#owl-slider").owlCarousel({ 

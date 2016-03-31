@@ -377,34 +377,47 @@ footer
 					font-size: 18px
 #implement
 	padding-bottom: 77px
-	ul
-		li
-			min-height: 130px
-			background-color: #DDE0E1
-			padding-left: 170px
-			position: relative
-			margin-bottom: 20px
-			padding-top: 25px
-			padding-right: 136px
-			>i
-				position: absolute
-				width: 92px
-				height: 92px
-				background-color: $white
-				color: $main
-				line-height: 92px
-				text-align: center
-				font-size: 53px
-				top: 50%
-				margin-top: -46px
-				border-radius: 50%
-				left: 31px
-			.btn
-				position: absolute
-				bottom: 0
-				right: 0
-			h3
-				font-family: 'AmazingGroteskBook'
+	.col-md-12
+		>ul
+			>li
+				min-height: 130px
+				background-color: #DDE0E1
+				position: relative
+				margin-bottom: 20px
+				padding: 25px 136px 5px 170px
+				&:before
+					position: absolute
+					content: ''
+					left: 75px
+					height: 90%
+					bottom: 20px
+					width: 5px
+					background-color: $white
+					border-left: 1px solid #ccc
+					border-right: 1px solid #ccc
+				>i
+					position: absolute
+					width: 92px
+					height: 92px
+					background-color: $white
+					color: $main
+					line-height: 92px
+					text-align: center
+					font-size: 53px
+					top: 20px
+					border-radius: 50%
+					left: 31px
+				.btn
+					position: absolute
+					bottom: 0
+					right: 0
+				h3
+					font-family: 'AmazingGroteskBook'
+				ul
+					margin-top: 60px
+					li
+						margin-bottom: 35px
+
 
 #approach
 	h3
@@ -418,6 +431,7 @@ footer
 		background-image: url("../img/approach.jpg")
 		background-repeat: no-repeat
 		background-size: cover		
+		background-position: top right
 		margin-top: 30px
 		padding: 40px 15px
 		h3
