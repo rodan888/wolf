@@ -29,6 +29,10 @@ body textarea:required:valid
 	position: relative
 	overflow: hidden
 	height: 375px
+	background-repeat: no-repeat
+	background-size: 100% auto
+	background-attachment: fixed
+	background-position: 0 60px
 	.background
 		position: absolute
 		top: 0
@@ -50,6 +54,7 @@ body textarea:required:valid
 			font-size: 45px
 			line-height: 53px
 			font-weight: 900
+			z-index: 10
 	&.home
 		height: 720px
 		.btn
@@ -312,69 +317,35 @@ section.section
 		color: $titlecolor
 	p
 		color: $textcolor
-footer
-	line-height: 60px
-	font-size: 13px
-	a
-		color: $textcolor
-	.col-md-4:nth-child(2)
-		text-align: center
-	.col-md-4:nth-child(3)
-		text-align: right
-	ul
-		li
-			display: inline-block
-			a
-				display: block
-				position: relative				
-				margin-right: 14px
-				&:before
-					position: absolute
-					content: ""
-					width: 1px 
-					height: 15px
-					background-color: $textcolor
-					right: -10px
-					top: 50%
-					margin-top: -7px
-			&:last-child a
-				margin-right: 0
-				&:before
-					display: none
-	&.blue
-		background-color: $main
-		color: $white
-		a
-			color: $white!important
 
 #article
-	article		
-		height: 370px		
-		.img-wrap
-			overflow: hidden
-			img
-				height: 370px
-				min-width: 100%
-				width: auto
-		.article-content
-			position: relative
-			padding-left: 42px
+	min-height: 370px		
+	.img-wrap
+		overflow: hidden
+		img
 			height: 370px
-			h3
-				font-family: 'AmazingGroteskBook'
-				font-size: 28px
-				line-height: 32px				
-				margin-bottom: 40px		
-			p
-				color: $textcolor
-			.btn
-				position: absolute
-				bottom: 0
-				left: 42px
-				padding: 0
-				line-height: 24px
-				i
-					font-size: 18px
+			min-width: 100%
+			width: auto
+	.article-content
+		position: relative
+		padding-left: 42px
+		min-height: 270px
+		padding-bottom: 25px
+		h3
+			font-family: 'AmazingGroteskBook'
+			font-size: 28px
+			line-height: 32px				
+			margin-bottom: 40px		
+		p
+			color: $textcolor
+		.btn
+			position: absolute
+			bottom: 0
+			left: 42px
+			padding: 0
+			line-height: 24px
+			i
+				font-size: 18px
 #implement
 	padding-bottom: 77px
 	.col-md-12
@@ -389,8 +360,8 @@ footer
 					position: absolute
 					content: ''
 					left: 75px
-					height: 90%
-					bottom: 20px
+					height: calc(100% - 40px)
+					bottom: 19px
 					width: 5px
 					background-color: $white
 					border-left: 1px solid #ccc
@@ -411,12 +382,31 @@ footer
 					position: absolute
 					bottom: 0
 					right: 0
+					width: 136px
 				h3
 					font-family: 'AmazingGroteskBook'
 				ul
 					margin-top: 60px
+					display: none
 					li
 						margin-bottom: 35px
+						position: relative
+						&:before
+							position: absolute
+							content: attr(data-index)
+							width: 48px
+							height: 48px
+							background-color: $white
+							line-height: 48px
+							color: $main
+							border: 1px solid #ccc
+							text-align: center
+							border-radius: 50%
+							left: -117px
+							top: 0px						
+							transition: all 0.3s
+							transition-delay: 0.5s
+
 
 
 #approach
@@ -480,7 +470,7 @@ footer
 				height: 584px				
 			&:nth-child(5n+5)
 				width: calc(100% - 365px)
-				width: -webkit-calc(100% - 365px)
+				width: -webkit-calc(100% - 361px)
 				width:  -moz-calc(100% - 365px)
 				height: 287px
 				.descr-block
@@ -518,6 +508,102 @@ footer
 				font-size: 12px
 				&:hover
 					text-decoration: underline
+		&.about
+			margin-bottom: 87px
+			.grid-item
+				&:nth-child(5n+4)
+					width: 345px
+					height: 287px
+					.descr-block
+						left: 0
+						color: $textcolor
+						.btn,h3
+							color: $titlecolor
+					img
+						display: none	
+		&.team
+			.grid-item
+				.descr-block
+					max-width: 215px
+					min-width: 215px
+					h3
+						margin-bottom: 0
+				&:nth-child(6n+1)
+					width: 701px
+					height: 584px	
+					.descr-block
+						left: 50%
+						color: $textcolor
+						max-width: 345px
+						.btn,h3
+							color: $titlecolor			
+					img
+						min-width: 50%
+						left: 25%
+				&:nth-child(6n+2),&:nth-child(6n+3),&:nth-child(6n+4),&:nth-child(6n+5),&:nth-child(6n+6)
+					width: 345px
+					height: 287px
+					.descr-block						
+						color: $textcolor
+						.btn,h3
+							color: $titlecolor
+				&:nth-child(6n+3)
+					img
+						display: block
+				&:nth-child(6n+2),&:nth-child(6n+4),&:nth-child(6n+6)
+					.descr-block
+						right: 0
+						text-align: right
+						.slug
+							color: $main
+							max-width: 150px
+							display: inline-block
+		&.cases
+			.grid-item
+				&:nth-child(10n+1),&:nth-child(10n+6)
+					width: 530px!important
+					height: 540px!important
+				&:nth-child(10n+2),&:nth-child(10n+10)
+					width: 530px
+					height: 270px
+				&:nth-child(10n+3),&:nth-child(10n+5),&:nth-child(10n+8),&:nth-child(10n+9)
+					width: 265px
+					height: 270px
+				&:nth-child(10n+4),&:nth-child(10n+7)
+					width: 265px
+					height: 540px
+				&:hover
+					.descr-block
+						bottom: 0	
+				.descr-block
+					width: 100%
+					background-color: rgba(0,0,0, .5)
+					padding: 30px 60px 30px 10px
+					min-width: 270px
+					height: 220px
+					bottom: -220px
+					transition: bottom 0.3s				
+					.slug
+						line-height: 45px
+						padding: 0 25px
+						background-color: $white
+						color: $titlecolor
+						position: absolute
+						top: -45px
+						right: 0
+						font-family: "OpenSansBold"
+					.btn.small
+						position: absolute
+						width: 60px
+						height: 60px
+						background-color: #000
+						right: 0
+						bottom: 0
+						line-height: 60px
+						font-size: 35px
+						i
+							display: none
+
 	.btn.block
 		margin: 52px auto
 	&.industries
@@ -546,9 +632,208 @@ footer
 					color: $white
 					padding: 1px 5px
 
+.history-wpc
+	background-image: url("../img/history-bg.jpg")
+	background-repeat: no-repeat
+	background-size: cover
+	min-height: 400px
+	padding-bottom: 20px
+	.section-title
+		color: $white
+	.histoty-step-wrap
+		background-color: $white
+		max-width: 870px
+		margin: 0 auto
+		padding:  35px  35px 35px 130px
+		ul
+			li
+					position: relative
+					color: $textcolorlight
+					margin-bottom: 30px
+					span
+						position: absolute
+						top: 5px
+						left: -85px 
+						display: block
+						padding: 0px 10px
+						border: 1px solid $main
+						border-radius: 3px
+						color: $titlecolor
+						font-family: 'OpenSansBold'
 
 
+#tabs
+	ul
+		text-align: center
+		li
+			display: inline-block
+			span.btn
+				cursor: pointer
+				min-width: 130px
+			&.active
+				.btn
+					background-color: $main
+					color: $white
+	.w-tabs
+		min-height: 267px
+		max-width: 870px
+		margin: 40px auto 40px
+		.tab
+			display: none
+			&:first-child
+				display: block
+			.item-tab
+				border-bottom: #E5E5E5 1px solid
+				text-align: left
+				margin-bottom: 20px
+				h4
+					font-family: 'OpenSansBold'
+					font-size: 22px
+					color: $titlecolor
+				span.date
+					color: $main
+					text-transform: uppercase
+					font-size: 14px
+				p
+					color: $textcolor
+					margin-top: 15px
+#form
+	background-color: #F2F5F7
+	.form
+		max-width: 870px
+		margin: 40px auto 40px
+		text-align: center
+		input,textarea
+			display: inline-block
+			width: 49%
+			height: 45px
+			background-color: $white
+			border-radius: 3px
+			border: 1px solid #D9D9D9
+			text-indent: 10px
+			margin-bottom: 15px
+			&:first-child
+				margin-right: 12px
+		textarea
+			width: 100%
+			height: 90px
+#contacts
+	background-color: #EBEEF0
+	min-height: 200px
+	text-align: center
+	color: $titlecolor
+	padding: 20px 0
+	border-top: 1px solid #DEDEDE
+	.adres	
+		margin-bottom: 20px
+		p
+			text-decoration: underline
+	i
+		display: block
+		font-size: 35px	
+		color: $main
 
+.content-inner
+	.content-inner-wrap
+		max-width: 870px
+		margin: 0 auto
+		text-align: left
+		.title-inner
+			border-bottom: 2px solid #F9F9F9
+			padding-bottom: 15px
+			margin-bottom: 25px
+			h2
+				text-align: left
+				font-family: 'AmazingGroteskLight'
+			.slug
+				background-color: $main
+				color: $white
+				text-transform: uppercase
+				font-size: 12px
+				padding: 2px 5px
+				display: inline-block
+				margin-right: 15px
+				border-radius: 3px
+			.date
+				display: inline-block
+				vertical-align: top
+				color: $textcolorlight
+		h4
+			font-family: 'OpenSansBold'
+			font-size: 14px
+			margin-bottom: 5px
+		p
+			color: $textcolor
+			margin-bottom: 30px
+			font-size: 13px
+		.exerpt			
+			color: $textcolorlight
+			border-left: 2px solid #F9F9F9
+			padding-left: 45px
+			p		
+				font-size: 17px
+
+.share-line
+	position: relative
+	border-top: 1px solid #CBCBCB
+	border-bottom: 1px solid #CBCBCB
+	span
+		text-transform: uppercase
+		color: $textcolorlight
+		font-size: 14px	
+		line-height: 60px
+	ul
+		text-align: right
+		li
+			display: inline-block
+			font-size: 25px
+			width: 36px
+			text-align: center
+			a,button
+				display: block
+				color: #000
+				line-height: 60px
+				transition: color 0.3s
+				&:hover
+					color: $titlecolor	
+
+
+footer
+	line-height: 60px
+	font-size: 13px
+	a
+		color: $textcolor
+	.col-md-4:nth-child(2)
+		text-align: center
+	.col-md-4:nth-child(3)
+		text-align: right
+	ul
+		li
+			display: inline-block
+			a
+				display: block
+				position: relative				
+				margin-right: 14px
+				&:hover
+					text-decoration: underline
+				&:before
+					position: absolute
+					content: ""
+					width: 1px 
+					height: 15px
+					background-color: $textcolor
+					right: -10px
+					top: 50%
+					margin-top: -7px
+			&:last-child a
+				margin-right: 0				
+				&:before
+					display: none
+	&.blue
+		background-color: $main
+		color: $white
+		a
+			color: $white!important		
 
 
 

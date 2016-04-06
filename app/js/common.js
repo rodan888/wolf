@@ -35,10 +35,15 @@ $(function() {
 
 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
-		//all images loaded
-	jQuery(window).on('load', function(){	
-			if(jQuery().parallax) jQuery('.parallax').parallax();
+if ($(window).width() < 992) {
+	$('header .top-nav nav>ul>li>a').on('click',function(event){
+		event.preventDefault();
+		$('header .top-nav nav>ul>li>a').not(this).next().slideUp('fast');
+		$(this).next().slideToggle('fast');
 	});
+};
+
+
 
 		//mobile button
 	jQuery('.btn-menu').on('click',function(){
@@ -55,35 +60,41 @@ $(function() {
 	});
 
 
-// Solutions-import block toggle
-jQuery('#implement .btn').on('click', function(event){
-	event.preventDefault();
-	jQuery(this).next().slideToggle('slow');
+
+
+jQuery('.tabs .tab-link').click(function(){		                    
+jQuery('.tabs').find('.active').removeClass('active');
+jQuery(this).addClass('active');
+	var dataShow = $(this).attr('data-show');
+	jQuery('.w-tabs .tab').css('display', 'none');
+	jQuery('#'+dataShow).fadeIn(1000);
 });
 
 
-//owl slider
-jQuery("#owl-slider").owlCarousel({ 
-	autoPlay: 3000,
-	navigation: true,
-	items : 3,
-	autoPlay: false,		
-	pagination: false,
-	scrollPerPage: false,
-	navigationText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
-	itemsDesktop : [1090,3],	
-	itemsDesktopSmall : [979,3] 
-});	
 
-// packery grid
+
 	var main = {
 			grid: $('.grid'),
+			owl: $("#owl-slider"),
+			togBtn: $('#implement .btn'),
 			options: {
 				itemSelector: '.grid-item',
 				gutter: 4		
 			},
+			owlOption: {
+				autoPlay: 3000,
+				navigation: true,
+				items : 3,
+				autoPlay: false,		
+				pagination: false,
+				scrollPerPage: false,
+				navigationText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+				itemsDesktop : [1090,3],	
+				itemsDesktopSmall : [979,3] 
+			},
 			loadBtn: $('#packery .btn'),
-			packeryGrid: [],
+			packeryGrid: [],	
+			flag: true,		
 			ajaxPackery: function(){
 			 $.getJSON('ajax-load.json', function(data) { 					
 					for(var i = 0; i < data.packeryList.length;i++){
@@ -101,49 +112,50 @@ jQuery("#owl-slider").owlCarousel({
 				});
 			},
 			initPackery: function(){
-				main.grid.packery(main.options);
+				this.grid.packery(main.options);
+				this.ajaxLoad();
 			},
 			ajaxLoad: function(){
-				main.loadBtn.on('click',function(event){
+				this.loadBtn.on('click',function(event){
 						event.preventDefault();
 						main.ajaxPackery();
 				});
 			},
+			toggleInfo: function(btn){				
+			var thisText = '<i class="fa fa-angle-right"></i> find how',
+					btnText = '<i class="fa fa-angle-left"></i> close',
+					infoList = btn.next(),
+					infoItem = infoList.find('li');
+
+				for(i = 0; i < infoItem.length; i++){
+					var index = infoItem.eq(i).index();
+					infoItem.eq(i).attr('data-index', index+1);
+				};
+
+				if (this.flag == true) {
+						this.flag = false; 						
+						btn.html(btnText);
+					}else{
+						btn.html(thisText);
+						this.flag = true;
+					}				
+					infoList.slideToggle('slow');
+			},
+			toggleInfoInit: function(){
+				this.togBtn.on('click', function(event){
+					event.preventDefault();
+					main.toggleInfo($(this));					
+				});
+			},
 			init: function(){
-				main.initPackery();
-				main.ajaxLoad();
+				// Packery grid
+				this.initPackery();
+				//owl init
+				this.owl.owlCarousel(this.owlOption);
+				// toggle info Solutions-import page
+				this.toggleInfoInit();
+				
 			}
 };
 main.init();
-
-// var $grid = $('.grid').packery({
-// 		itemSelector: '.grid-item',
-// 		gutter: 4
-// 	});
-
-// jQuery('#packery .btn').on('click', function(event){
-// 	event.preventDefault();
-// 	ajaxPackery();	
-// });
-
-
-// function ajaxPackery(){
-//  $.getJSON('ajax-load.json', function(data) { 
-// 			var packeryGrid = [];
-// 		for(var i = 0; i < data.packeryList.length;i++){
-// 				packeryGrid.push('<div class="grid-item">'+
-// 							'<img src="'+ data.packeryList[i].img +'" alt="foto">'+
-// 							'<div class="descr-block">'+
-// 								'<a href="'+ data.packeryList[i].link +'" class="slug">'+ data.packeryList[i].slug +'</a>'+
-// 								'<h3 class="title">'+ data.packeryList[i].title +'</h3>'+
-// 								'<p>'+ data.packeryList[i].descr +'</p>'+
-// 								'<a href="'+ data.packeryList[i].link +'" class="btn small"><i class="fa fa-chevron-circle-right"></i>more</a>'+
-// 							'</div>'+
-// 						'</div>');										
-// 		};   		
-//     $('.grid').append( packeryGrid ).packery('reloadItems').packery( 'layout' );
-// 	});
-// };
-
 });
-

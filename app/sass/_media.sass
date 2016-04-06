@@ -18,10 +18,24 @@
 			.content-wrap 
 				.btn-wrap
 					padding-right: 0!important
-		
+
+	header
+		.top-nav
+			nav
+				.search-block
+					right: calc( (100% - 970px) / 2)
+					right: -webkit-calc( (100% - 970px) / 2)
+					right: -moz-calc( (100% - 970px) / 2)
+		form#search.active
+			right: calc( (100% - 970px) / 2)
+			right: -webkit-calc( (100% - 970px) / 2)
+			right: -moz-calc( (100% - 970px) / 2)
 
 
 	/**/
+	.top-title
+		background-size: inherit!important
+		background-position: center 60px!important
 
 
 /* Medium Devices, Desktops */
@@ -59,6 +73,21 @@
 						a
 							line-height: 45px
 							padding-left: 0
+							height: auto
+							&:after
+								display: none
+				>ul>li 
+					ul
+						position: inherit
+						width: 100%
+						height: auto
+						padding-right: 0
+						opacity: 1
+						display: none
+						li
+							display: block
+							a
+								line-height: 25px
 			.btn-menu
 				display: block
 		.search-block
@@ -70,6 +99,27 @@
 			opacity: 1
 			input
 				position: initial
+	#article 
+		.article-content
+			margin-top: 25px
+
+	#packery
+		.grid
+			.grid-item
+				&:nth-child(5n+2), &:nth-child(5n+5)
+					max-width: 345px
+	#contacts
+		.col-md-3
+			margin-bottom: 20px
+			border-bottom: 1px solid #DEDEDE
+
+	#form
+		.form
+			input
+				margin-right: 0
+				width: 100%
+
+				
 
 
 
@@ -77,6 +127,22 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
+	#packery
+		.grid		
+			.grid-item
+				max-width: 330px!important
+				min-width: 325px
+			&.team 
+				.grid-item:nth-child(6n+1) 
+					img
+						left: 0
+						-webkit-transform: translateX(0%)
+						-moz-transform: translateX(0%)
+						-o-transform: translateX(0%)
+						-ms-transform: translateX(0%)
+					.descr-block
+						left: 0
+						background: rgba(255,255,255, 0.7)
 	
 	/*Disable Animation on Mobile Devices*/
 	.animated
@@ -110,6 +176,20 @@
 		.owl-buttons
 			display: none!important
 
+	#implement 
+		.col-md-12
+			>ul
+				>li
+					padding: 25px 5px 48px 170px
+					&:before
+						bottom: 62px
+						height: -webkit-calc(100% - 83px)
+						height: calc(100% - 83px)
+					.btn
+						right: 50%
+						margin-right: -68px
+
+
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
@@ -119,6 +199,45 @@
 		.owl-item
 			.item
 				margin-right: 0
+	#implement 
+		.col-md-12
+			>ul
+				>li
+					padding-left: 60px
+					>i
+						width: 50px
+						height: 50px
+						left: 3px
+						top: 3px
+						line-height: 55px
+						font-size: 30px
+					&:before
+						left: 25px
+					ul
+						li:before
+							left: -57px
+	#tabs
+		ul
+			li
+				span
+					min-width: 58px!important
+					font-size: 12px
+					&.btn
+						padding: 2px
+
+	#packery
+		.grid		
+			max-width: 345px
+			margin: 0 auto
+			.grid-item
+				max-width: 290px!important
+				min-width: 290px
+				.descr-block
+					min-width: 290px!important
+			&.cases 
+				.grid-item
+					&:nth-child(10n+2)
+						max-width: 265px!important
 
 	#main-info
 		.item		
